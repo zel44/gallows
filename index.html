@@ -1,0 +1,10 @@
+<div id="app">
+  <div id="word">
+    <div v-for= in game.word v-class={opened: !!game.word[numLett]}>
+      {{game.word[numLett]}}
+    </div>
+    <div id="gallows"></div>
+    <div id="alphabet">
+      <app-letter v-for=lett in game.alphabet v-if=!!game.openedLets.find(lett) :letter=lett @click="checkLetter(lett)"></app-letter>
+    </div>
+  </div>
